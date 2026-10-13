@@ -1,4 +1,3 @@
-##Titre Readme
+## Titre Readme
 
-Ceci est un texte quelconque.
-
+Ceci est un texte quelconque
