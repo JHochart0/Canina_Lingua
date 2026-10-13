@@ -8,7 +8,7 @@ import NavLink from "../components/NavLink.jsx";
 function Legal() {
     // change the title
     useEffect(() => {
-        document.title = "Mentions légales et politique de confidentialité";
+        document.title = "Canina Lingua - Mentions légales et politique de confidentialité";
     }, []);
 
     return (

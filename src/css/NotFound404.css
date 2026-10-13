@@ -11,7 +11,7 @@
 *********notfound container ******
 *********************************/
 .notfound-container {
-    min-height: 90vh;
+    min-height: 70vh;
     color: var(--color-dark-gray);
     font-family: var(--font-main);
     display: flex;

@@ -9,10 +9,10 @@ import NavLink from '../components/NavLink';
 
 
 function Contact() {
-    useRevealOnScroll("");
+    useRevealOnScroll(".fade-in-up, .fade-in-side-left, .fade-in-side-right, .zoom-animation");
 
     useEffect(() => {
-        document.title = "Page de contact";
+        document.title = "Canina Lingua - Contact";
     }, []);
 
     const [formData, setFormData] = useState({

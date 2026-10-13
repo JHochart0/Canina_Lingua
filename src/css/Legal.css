@@ -83,30 +83,6 @@
     font-size: 0.95rem;
 }
 
-/* Legal separation */
-.legal-section-text hr{
-    color:var(--color-dark-gray);
-}
-
-/* Legal CAPE section */
-.legal-section-CAPE{
-    margin-top:1rem;
-}
-
-/* Legal CAPE section text*/
-.legal-section-CAPE-text{
-    margin-left:1rem;
-}
-
-/* CAPE legal mention*/
-.CAPE{
-    font-weight: normal;
-    font-style: normal;
-    text-Decoration: none;
-    margin: 20px 0;
-    padding: 10px;
-    border-left: 3px solid var(--color-dark-gray);
-}
 
 /*********************************
 *******Privacy section title******

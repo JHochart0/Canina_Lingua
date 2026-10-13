@@ -4,14 +4,14 @@ import '../css/NotFound404.css';
 
 function NotFound404() {
     useEffect(() => {
-        document.title = "Page non trouvée";
+        document.title = "Canina Lingua - Page non trouvée";
     }, []);
 
     return (
         <div className="notfound-container">
             <div className="notfound-content">
                 <h1 className="notfound-code">404</h1>
-                <h2 className="notfound-title">Perdu lors de la balade ?</h2>
+                <h2 className="notfound-title">Perdu lors de la promenade ?</h2>
                 <p className="notfound-text">
                     Oups ! La page que vous cherchez n'existe pas.
                 </p>

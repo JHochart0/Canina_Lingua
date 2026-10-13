@@ -9,12 +9,12 @@ function Home() {
 
     // change the title
     useEffect(() => {
-        document.title = "Page d'accueil";
+        document.title = "Canina Lingua - Éducateur comportementaliste canin";
     }, []);
 
     return (
         <div className="home-container">
-            ceci est un test
+            Il y aura ici l'accueil !
         </div>
     );
 }

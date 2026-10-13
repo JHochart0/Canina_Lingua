@@ -15,6 +15,7 @@ import Services from "./pages/Services.jsx";
 import Contact from "./pages/Contact.jsx";
 import Photos from "./pages/Photos.jsx";
 import Legal from "./pages/Legal.jsx";
+import GTC from "./pages/GTC.jsx";
 import NotFound404 from "./pages/NotFound404.jsx";
 
 
@@ -30,8 +31,9 @@ function App() {
                         <Route path="/" element={<Home/>} />
                         <Route path="/prestations" element={<Services/>} />
                         <Route path="/contact" element={<Contact/>} />
-                        <Route path="/gallerie" element={<Photos/>} />
+                        <Route path="/gallery" element={<Photos/>} />
                         <Route path="/legal" element={<Legal/>} />
+                        <Route path="/GTC" element={<GTC/>} />
                         <Route path="*" element={<NotFound404/>} />
                     </Routes>
                 </div>

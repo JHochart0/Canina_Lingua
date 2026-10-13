@@ -23,6 +23,7 @@
     align-items: center; 
     box-sizing: border-box; 
     background: url('../assets/img/dog_background_header.jpg') no-repeat center center;
+    background-size: cover;
 }
 
 /* Header navigation container */
@@ -32,8 +33,10 @@
     top: 0;
     z-index: 1000;
     box-sizing: border-box;
+    height:80px;
 
     display: flex;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 
@@ -56,56 +59,76 @@
 ***************************/
 
 /* Remove link underline from the entire logo */
-.logo,
-.logo:hover,
-.logo:focus,
-.logo:active {
+.header-banner-container .logo,
+.header-banner-container .logo:hover,
+.header-banner-container .logo:focus,
+.header-banner-container .logo:active {
     text-decoration: none;
 }
 
-.logo-container{
+.header-banner-container .logo{
+    padding:25px 50px;
+    border-radius:70px;
     display:flex;
-    flex-direction:row;
-    align-items: center;
-    background-color: #35353433;
-    padding:20px;
-    border-radius:50px;
+    align-items:center;
+    background-color: #3535345d;
 }
 
-.logo-text-container {
+
+.header-banner-container .logo-img-wrapper {
+
+    background-color: #a7a7a78f;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; /* Ajuste selon la taille voulue */
+
+}
+
+.header-banner-container .logo-img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: min(80vw, 500px);
+
+    object-fit: contain;
+}
+
+.header-banner-container .logo-img,
+.header-banner-container .logo-text-container {
+    transition: filter 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* header logo img hover*/
+.header-banner-container .logo:hover .logo-img{
+    filter: drop-shadow(0 0 20px var(--color-green));
+    transform: scale(1.03);
+}
+
+/* header logo text container hover*/
+.header-banner-container .logo:hover .logo-text-container{
+    text-shadow: 0 0 15px var(--color-gold);
+    transform: scale(1.02);
+}
+
+.header-banner-container .logo-text-container {
     color: var(--color-gold);
     -webkit-text-stroke: 0.5px var(--color-dark-gray);
     text-transform: uppercase;
     text-decoration: none;
     margin-left: 10px;
+    text-align:center;
 }
 
-.logo-title{
+.header-banner-container .logo-title{
     font-size:4rem;
     text-decoration: none;
 }
 
-.logo-subtitle{
+.header-banner-container .logo-subtitle{
     font-size:1.4rem;
     text-decoration: none;
-}
-
-.header-banner-container .logo-img { 
-    display: block; 
-    width: auto; 
-    height: auto; 
-    max-width: min(80vw, 500px); 
-    max-height: 70vh; 
-    object-fit: contain; 
-    background-color: #d3cfc946;
-    padding:10px;
-    border-radius:50%;
-}
-
-/* header logo img hover*/
-.logo-container:hover{
-    filter: drop-shadow(0 0 15px var(--color-gold));
-    
 }
 
 /*********************************
@@ -116,7 +139,8 @@
 .header-nav {
     display: flex;
     align-items: center;
-    gap: 25px;
+    height:100%;
+    gap:15px;
 }
 
 /* header navbar links*/
@@ -125,25 +149,37 @@
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2rem;
-    padding: 10px 15px;
-    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 0px 30px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
     position: relative;
+    box-sizing: border-box;
+    transition: color 0.3s ease;
 }
 
 /* navbar links hover */
 .header-nav a:hover{
-    color:#d5e0e6;
+    color: #94918d;
 }
 
-
-/* contact button */
-.header-nav a#navbar-contactLink {
-
+/* Création de la ligne de soulignement */
+.header-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: var(--color-green);
+    transition: width 0.3s ease, left 0.3s ease;
 }
 
-/*contact button hover */
-.header-nav a#navbar-contactLink:hover {
-
+/* Animation au survol */
+.header-nav a:hover::after {
+    width: 80%;
+    left: 10%;
 }
 
 /*********************************
@@ -151,8 +187,14 @@
 *********************************/
 
 /* Active state for standard links */
-.header-nav a.active:not(#navbar-contactLink) {
-
+.header-nav a.active {
+    color: var(--color-gold);
+}
+/* État actif et survol : on applique le soulignement fixe ou animé */
+.header-nav a:hover::after,
+.header-nav a.active::after {
+    width: 80%;
+    left: 10%;
 }
 
 
