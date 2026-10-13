@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&display=swap');
+:root {
+    --color-green: #5b914e;
+    --color-yellow:
+    --color-white: #FFFFFF;
+    --color-dark-gray: #1F1F1F;
+    --font-main: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;;
+}
+
+/********************************
+*********Global Section**********
+********************************/
+*{
+    margin: 0;
+}
+
+html{
+    height:100%;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: var(--font-main);
+    background-color: var(--color-white);
+    color: var(--color-dark-gray);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height:100vh;
+}
+
+/********************************
+*******Main content Section******
+********************************/
+
+/*main content of the site*/
+.content{
+    position: relative;
+    overflow : hidden;
+    min-height:80vh;
+    /*background à mettre ici*/
+}

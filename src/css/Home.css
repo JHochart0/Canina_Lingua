@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&display=swap');
+:root {
+    --color-green: #5b914e;
+    --color-yellow:
+    --color-white: #FFFFFF;
+    --color-dark-gray: #1F1F1F;
+    --font-main: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;;
+}
+
+/*********************************
+************ ANIMATIONS **********
+/*********************************/
+
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.fade-in-side-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.fade-in-side-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+.fade-in-up.visible, .fade-in-side-left.visible, .fade-in-side-right.visible {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+}
+
+.zoom-animation{
+    opacity: 0;
+    transform:scale(0.1);
+    filter: blur(4px);
+    transition: opacity 1.5s ease-out, transform 1.2s ease-out, filter 1.2s ease-out;
+    
+}
+
+.zoom-animation.visible{
+    opacity: 1;
+    transform: scale(1);
+    filter:blur(0);
+}
+
+/*********************************
+**********HOME CONTAINER**********
+/*********************************/
+.home-container {
+    overflow:hidden;
+    min-height: 150vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    margin: 0 auto;
+    padding-bottom:100px;
+    line-height: 1.6;
+    color: var(--color-dark-gray);
+    font-family: var(--font-main);
+    overflow-x: hidden;    
+}
+
+
+/*********************************
+****** RESPONSIVE RULES *********
+/*********************************/
+
+/*tablets*/
+@media (max-width: 1024px) {
+
+}
+
+/*tablets landscape*/
+@media (max-width: 1500px) and (orientation: landscape) {
+
+}
+
+/*mobile*/
+@media (max-width: 599px) {
+ 
+}
+
+
+/*mobile landscape*/
+@media (max-width: 899px) and (orientation: landscape) {
+ 
+}
+
