@@ -1,94 +1,113 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&display=swap');
 :root {
     --color-green: #5b914e;
-    --color-yellow:
-    --color-white: #FFFFFF;
-    --color-dark-gray: #1F1F1F;
+    --color-gold: #d9871c;
+    --color-white: #d3cfc9;
+    --color-dark-gray: #181a1b;
     --font-main: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;;
 }
-
 
 /**************************
 ********Header container***
 **************************/
+.full-header-container { 
+    width: 100%; 
+}
 
-/* full header */
+.header-banner-container { 
+    width: 100%; 
+    height: 40vh; 
+    height: 40dvh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    box-sizing: border-box; 
+    background: url('../assets/img/dog_background_header.jpg') no-repeat center center;
+}
+
+/* Header navigation container */
 .header-container {
-    max-height: 175px;
     width: 100%;
     position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
     z-index: 1000;
- 
+    box-sizing: border-box;
 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.445);
+    display: flex;
     align-items: center;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
+
+    background-color: var(--color-dark-gray);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.445);
     border-bottom: 1px solid #1f1f1f1f;
-    
-   
-    transform: translateY(0); 
-    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+
+    transform: translateY(0);
+    transition: transform 0.3s ease;
 }
 
-/* hiding the header when scrolling down */
 .header-container.header-hidden {
     transform: translateY(-100%);
     box-shadow: none;
+    pointer-events: none;
 }
-
-/* header wrap */
-.header-wrap {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    backdrop-filter: blur(5px);
-    border-radius: 0 0 12px 12px;
-    position: relative;
-}
-
-/* aligning every items in the header */
-.header-logo-link,
-.contact-wrapper,
-.burger-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-/* Contact button wrapper*/
-.contact-wrapper {
-    margin-left: 10px;
-}
-
 
 /***************************
 ************Header logo*****
 ***************************/
 
-/* header logo link*/
-.header-logo-link {
+/* Remove link underline from the entire logo */
+.logo,
+.logo:hover,
+.logo:focus,
+.logo:active {
     text-decoration: none;
 }
 
-/* header logo img*/
-.header-logo-img {
-    height: 150px;
-    width: auto;
-    transition: filter 0.4s ease-in-out, transform 0.4s ease-in-out;
-    will-change: transform, filter;
+.logo-container{
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    background-color: #35353433;
+    padding:20px;
+    border-radius:50px;
+}
+
+.logo-text-container {
+    color: var(--color-gold);
+    -webkit-text-stroke: 0.5px var(--color-dark-gray);
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.logo-title{
+    font-size:4rem;
+    text-decoration: none;
+}
+
+.logo-subtitle{
+    font-size:1.4rem;
+    text-decoration: none;
+}
+
+.header-banner-container .logo-img { 
+    display: block; 
+    width: auto; 
+    height: auto; 
+    max-width: min(80vw, 500px); 
+    max-height: 70vh; 
+    object-fit: contain; 
+    background-color: #d3cfc946;
+    padding:10px;
+    border-radius:50%;
 }
 
 /* header logo img hover*/
-.header-logo-img:hover {
-    filter: drop-shadow(0 0 15px rgba(110, 185, 233, 0.8));
+.logo-container:hover{
+    filter: drop-shadow(0 0 15px var(--color-gold));
     
 }
+
 /*********************************
 ***************Header navbar******
 *********************************/

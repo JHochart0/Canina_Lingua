@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&display=swap');
 :root {
     --color-green: #5b914e;
-    --color-yellow:
-    --color-white: #FFFFFF;
-    --color-dark-gray: #1F1F1F;
+    --color-gold: #d9871c;
+    --color-white: #d3cfc9;
+    --color-dark-gray: #181a1b;
     --font-main: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;;
 }
 
@@ -11,7 +11,7 @@
 *********notfound container ******
 *********************************/
 .notfound-container {
-    min-height: 100vh;
+    min-height: 90vh;
     color: var(--color-dark-gray);
     font-family: var(--font-main);
     display: flex;
@@ -38,14 +38,14 @@
     font-weight: 900;
     margin: 0;
     line-height: 1;
-    color: var(--color-dark-gray);
+    color: var(--color-gold);
     letter-spacing: -2px;
     filter: drop-shadow(0 4px 6px rgba(24, 49, 83, 0.12));
 }
 
 .notfound-title {
     font-size: 1.6rem;
-    color: var(--color-dark-gray);
+    color: var(--color-green);
     margin: 20px 0 15px 0;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -61,26 +61,24 @@
 .notfound-btn {
     display: inline-block;
     text-decoration: none;
-    color: var(--color-dark-gray);
-    padding: 14px 35px;
-    font-weight: bold;
+    color: var(--color-white);
+    background-color: var(--color-dark-gray);
+    padding: 14px 32px;
+    font-weight: 600;
     font-size: 0.95rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(24, 49, 83, 0.2);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid transparent;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(24, 26, 27, 0.2); 
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease; cursor: pointer;
+    cursor: pointer;
 }
 
 .notfound-btn:hover {
-    box-shadow: 0 6px 20px rgba(110, 185, 233, 0.4);
+    color: var(--color-gold);
+    
+    box-shadow: 0 6px 16px #5b914e9d;
     transform: translateY(-2px);
 }
-
-
-
-
-
-
-
 
 
 /*********************************

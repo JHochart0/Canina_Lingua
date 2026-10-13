@@ -24,7 +24,7 @@ function App() {
         <Router basename="/">
             <ScrollToTop />
             <div className="App">
-                
+                <Header />
                 <div className="content">
                     <Routes>
                         <Route path="/" element={<Home/>} />
@@ -36,7 +36,7 @@ function App() {
                     </Routes>
                 </div>
                 <ScrollToTopButton />
-                
+                <Footer />
             </div>
         </Router>
     );

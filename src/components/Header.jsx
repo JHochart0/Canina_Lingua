@@ -53,16 +53,23 @@ function Header() {
     }, [isMenuOpen]);
 
     return (
-        /* Dynamically add the 'header-hidden' class if isVisible is false */
-        <header className={`header-container ${!isVisible ? 'header-hidden' : ''}`} ref={headerRef}>
-            <div className="header-wrap">
-                <Logo />
-              
+        <>
+            <div className="full-header-container">
+                <div className="header-banner-container">
+                    <Logo />
+                </div>
+            </div>
+
+            <header
+                className={`header-container ${!isVisible ? 'header-hidden' : ''}`}
+                ref={headerRef}
+            >
                 <div className="burger-wrapper">
-                    <button 
-                        className={`menu-toggle ${isMenuOpen ? 'active' : ''}`} 
+                    <button
+                        className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
                         onClick={toggleMenu}
                         aria-label="Ouvrir le menu"
+                        aria-expanded={isMenuOpen}
                     >
                         <span className="bar"></span>
                         <span className="bar"></span>
@@ -70,12 +77,13 @@ function Header() {
                     </button>
                 </div>
 
-                <Navbar 
-                    className={`header-nav ${isMenuOpen ? 'nav-open' : ''}`} 
-                    onLinkClick={closeMenu} 
+                <Navbar
+                    className={`header-nav ${isMenuOpen ? 'nav-open' : ''}`}
+                    onLinkClick={closeMenu}
                 />
-            </div>
-        </header>
+            </header>
+        </>
+
     );
 }
 
