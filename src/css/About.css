@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&display=swap');
+:root {
+    --color-green: #5b914e;
+    --color-gold: #d9871c;
+    --color-white: #d3cfc9;
+    --color-dark-gray: #181a1b;
+    --font-main: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;;
+}
+
+/*********************************
+**********about container**********
+*********************************/
+
+/* Container global */
+.About-container {
+    overflow:hidden;
+    min-height: 150vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    margin: 0 auto;
+    padding-bottom:100px;
+    line-height: 1.6;
+    color: var(--color-dark-gray);
+    font-family: var(--font-main);
+    overflow-x: hidden;
+}

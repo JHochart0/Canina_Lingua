@@ -11,7 +11,6 @@
 *********notfound container ******
 *********************************/
 .notfound-container {
-    min-height: 70vh;
     color: var(--color-dark-gray);
     font-family: var(--font-main);
     display: flex;
@@ -20,7 +19,7 @@
     position: relative;
     overflow: hidden;
     text-align: center;
-    padding: 40px;
+    min-height:70vh;
 }
 
 /*********************************
@@ -40,7 +39,9 @@
     line-height: 1;
     color: var(--color-gold);
     letter-spacing: -2px;
-    filter: drop-shadow(0 4px 6px rgba(24, 49, 83, 0.12));
+    filter: drop-shadow(0 4px 6px #d9871c8a);
+    -webkit-text-stroke: 1px var(--color-dark-gray);
+    
 }
 
 .notfound-title {
@@ -52,10 +53,11 @@
 }
 
 .notfound-text {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     color: var(--color-dark-gray);
     line-height: 1.6;
     margin-bottom: 35px;
+    font-weight:bold;
 }
 
 .notfound-btn {
@@ -66,17 +68,17 @@
     padding: 14px 32px;
     font-weight: 600;
     font-size: 0.95rem;
-    border: 1px solid transparent;
+    border: 1px solid rgba(217, 135, 28, 0.2);
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(24, 26, 27, 0.2); 
-    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease; cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
     cursor: pointer;
 }
 
 .notfound-btn:hover {
     color: var(--color-gold);
-    
-    box-shadow: 0 6px 16px #5b914e9d;
+    border-color: var(--color-green);
+    box-shadow: 0 0 15px rgba(91, 145, 78, 0.5), 0 6px 16px rgba(0, 0, 0, 0.3);
     transform: translateY(-2px);
 }
 

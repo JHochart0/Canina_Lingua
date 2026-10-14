@@ -8,13 +8,13 @@ function Services() {
     useRevealOnScroll(".fade-in-up, .fade-in-side-left, .fade-in-side-right, .zoom-animation");
 
     useEffect(() => {
-        document.title = "Page prestations / offres";
+        document.title = "Canina Lingua - Découvrez mes prestations & tarifs";
     }, []);
 
 
     return (
         <div className="services-container">
-
+            Il y aura les prestations & tarifs ici
         </div>
     );
 }

@@ -13,7 +13,7 @@ function Photos() {
 
     // change the title of the page and fetch the google script used to get the images stocked in the google drive
     useEffect(() => {
-        document.title = "Page Galerie photos";
+        document.title = "Canina Lingua - Galerie photos";
 
         // Google script calling the google drive API, change the link of each new deployment
         const url = `lien deploiement google script`;

@@ -17,7 +17,7 @@ function PhoneButton(props) {
     return (
         <button onClick={togglePhoneButton} className={className}>
             <FontAwesomeIcon className="phone-icon" icon={faPhone} />
-            {showPhoneNumber ? '06 XX XX XX XX' : ' Appelez-nous'}
+            {showPhoneNumber ? '06 61 97 01 16' : ' Appelez-nous'}
         </button>
     );
 }

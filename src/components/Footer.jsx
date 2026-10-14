@@ -17,8 +17,8 @@ function Footer() {
 
         {/*legal part of the footer*/}
         <div className="footer-bottom">
-            <p className="footer-copyright">© {new Date().getFullYear()} Tous droits réservés | </p>
-            <NavLink to="/legal" content="Mentions légales et politique de confidentialité" id="footer-legalLink" />
+            <p className="footer-copyright">© {new Date().getFullYear()} Tous droits réservés | Canina Lingua</p>
+            <NavLink to="/mentions-legales" content="Mentions légales et politique de confidentialité" id="footer-legalLink" />
         </div>
     </footer>
   );

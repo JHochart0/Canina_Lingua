@@ -12,7 +12,7 @@ function Contact() {
     useRevealOnScroll(".fade-in-up, .fade-in-side-left, .fade-in-side-right, .zoom-animation");
 
     useEffect(() => {
-        document.title = "Canina Lingua - Contact";
+        document.title = "Canina Lingua - Contactez-moi !";
     }, []);
 
     const [formData, setFormData] = useState({
