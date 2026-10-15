@@ -466,96 +466,8 @@
 }
 
 /********************************
-******* Responsive base *********
+********** Responsive ***********
 ********************************/
-
-/*
- * General responsive sizing for screens up to 1024px.
- * Individual device orientations are adjusted below.
- */
-@media (max-width: 1024px) {
-
-    /* Banner */
-    .header-banner-container {
-        height: clamp(300px, 48vh, 460px);
-        height: clamp(300px, 48svh, 460px);
-
-        padding: 20px 10px;
-    }
-
-    /* Logo background */
-    .header-banner-container .logo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        gap: clamp(14px, 3vw, 22px);
-
-        width: fit-content;
-        max-width: 98%;
-
-        padding: clamp(16px, 3.5vw, 28px);
-
-        border-radius: 36px;
-
-        box-sizing: border-box;
-    }
-
-    /* Image wrapper */
-    .header-banner-container .logo-img-wrapper {
-        width: clamp(100px, 24vw, 150px);
-        height: clamp(100px, 24vw, 150px);
-
-        padding: 10px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        flex: 0 0 auto;
-
-        box-sizing: border-box;
-    }
-
-    /* Image */
-    .header-banner-container .logo-img {
-        display: block;
-
-        width: 100%;
-        height: 100%;
-
-        max-width: 100%;
-        max-height: 100%;
-
-        object-fit: contain;
-    }
-
-    /* Text wrapper */
-    .header-banner-container .logo-text-container {
-        flex: 1 1 auto;
-        min-width: 0;
-
-        margin-left: 0;
-
-        text-align: center;
-    }
-
-    /* Main title */
-    .header-banner-container .logo-title {
-        font-size: clamp(1.8rem, 7vw, 3rem);
-        line-height: 1.15;
-
-        overflow-wrap: break-word;
-    }
-
-    /* Subtitle */
-    .header-banner-container .logo-subtitle {
-        font-size: clamp(0.95rem, 3.5vw, 1.3rem);
-        line-height: 1.35;
-
-        overflow-wrap: break-word;
-    }
-}
 
 /********************************
 ******** Mobile portrait ********
@@ -563,7 +475,7 @@
 
 @media (max-width: 599px) and (orientation: portrait) {
 
-    /* Banner height */
+    /* Banner container */
     .header-banner-container {
         height: clamp(260px, 42vh, 340px);
         height: clamp(260px, 42svh, 340px);
@@ -585,7 +497,7 @@
         box-sizing: border-box;
     }
 
-    /* Larger hexagon */
+    /* logo img hexagon */
     .header-banner-container .logo-img-wrapper {
         width: clamp(96px, 28vw, 118px);
         height: clamp(96px, 28vw, 118px);
@@ -597,6 +509,7 @@
         box-sizing: border-box;
     }
 
+    /*logo img*/
     .header-banner-container .logo-img {
         width: 100%;
         height: 100%;
@@ -607,7 +520,7 @@
         object-fit: contain;
     }
 
-    /* Text receives remaining width */
+    /* logo text container*/
     .header-banner-container .logo-text-container {
         flex: 1 1 0;
         min-width: 0;
@@ -617,7 +530,7 @@
         text-align: center;
     }
 
-    /* Larger title, kept on a single line */
+    /* logo title */
     .header-banner-container .logo-title {
         font-size: clamp(1.6rem, 7.55vw, 2rem);
         line-height: 1.1;
@@ -625,7 +538,7 @@
         white-space: nowrap;
     }
 
-    /* Smaller subtitle, kept on a single line */
+    /* logo subtitle */
     .header-banner-container .logo-subtitle {
         font-size: clamp(0.8rem, 2vw, 0.85rem);
         line-height: 1.2;
@@ -633,46 +546,13 @@
     }
 }
 
-
-/********************************
-******* Tablet portrait *********
-********************************/
-
-@media (min-width: 600px) and (max-width: 1024px) and (orientation: portrait) {
-
-    /* Larger hexagon */
-    .header-banner-container .logo-img-wrapper {
-        width: clamp(155px, 20vw, 185px);
-        height: clamp(155px, 20vw, 185px);
-
-        padding: 12px;
-
-        flex: 0 0 auto;
-
-        box-sizing: border-box;
-    }
-
-    .header-banner-container .logo-img {
-        width: 100%;
-        height: 100%;
-
-        max-width: 100%;
-        max-height: 100%;
-
-        object-fit: contain;
-    }
-}
-
-
-
 /********************************
 ******** Mobile landscape *******
 *********************************/
 
 @media (max-width: 899px) and (orientation: landscape) {
 
-
-    /* Phone button remains part of the scrollable menu */
+    /* Phone button */
     .header-phone-btn {
         position: static;
 
@@ -713,14 +593,46 @@
         box-sizing: border-box;
     }
 
+    /*logo title*/
     .header-banner-container .logo-title {
         font-size: 1.4rem;
         line-height: 1.15;
     }
 
+    /*logo subtitle*/
     .header-banner-container .logo-subtitle {
         font-size: 0.75rem;
         line-height: 1.3;
+    }
+}
+
+/********************************
+*********** Tablet **************
+********************************/
+
+@media (min-width: 600px) and (max-width: 1024px) and (orientation: portrait) {
+
+    /* logo img wrapper */
+    .header-banner-container .logo-img-wrapper {
+        width: clamp(155px, 20vw, 185px);
+        height: clamp(155px, 20vw, 185px);
+
+        padding: 12px;
+
+        flex: 0 0 auto;
+
+        box-sizing: border-box;
+    }
+
+    /*logo img*/
+    .header-banner-container .logo-img {
+        width: 100%;
+        height: 100%;
+
+        max-width: 100%;
+        max-height: 100%;
+
+        object-fit: contain;
     }
 }
 
@@ -730,7 +642,7 @@
 
 @media (min-width: 900px) and (max-width: 1500px) and (orientation: landscape) {
 
-    /* Reduce the banner height */
+    /* banner container */
     .header-banner-container {
         height: clamp(175px, 28vh, 250px);
         height: clamp(175px, 28svh, 250px);
@@ -738,7 +650,7 @@
         padding: 10px 16px;
     }
 
-    /* Keep logo within the available banner width */
+    /* logo */
     .header-banner-container .logo {
         max-width: 98%;
 
@@ -749,7 +661,7 @@
         box-sizing: border-box;
     }
 
-    /* Responsive image dimensions */
+    /* logo img wrapper */
     .header-banner-container .logo-img-wrapper {
         width: clamp(105px, 12vw, 145px);
         height: clamp(105px, 12vw, 145px);
@@ -761,6 +673,7 @@
         box-sizing: border-box;
     }
 
+    /*logo img*/
     .header-banner-container .logo-img {
         width: 100%;
         height: 100%;
@@ -771,6 +684,7 @@
         object-fit: contain;
     }
 
+    /*logo text container*/
     .header-banner-container .logo-text-container {
         flex: 1 1 auto;
         min-width: 0;
@@ -778,11 +692,13 @@
         margin-left: 0;
     }
 
+    /*logo title*/
     .header-banner-container .logo-title {
         font-size: clamp(2rem, 3.5vw, 3rem);
         line-height: 1.15;
     }
 
+    /*logo subtitle*/
     .header-banner-container .logo-subtitle {
         font-size: clamp(1rem, 1.3vw, 1.2rem);
         line-height: 1.3;
