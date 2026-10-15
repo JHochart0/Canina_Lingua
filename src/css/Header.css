@@ -1,76 +1,91 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&display=swap');
+
 :root {
     --color-green: #5b914e;
     --color-gold: #d9871c;
     --color-white: #d3cfc9;
     --color-dark-gray: #181a1b;
-    --font-main: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
+    --font-main: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/**************************
-********Header container***
-**************************/
-.full-header-container { 
-    width: 100%; 
+/********************************
+********Header container*********
+********************************/
+
+.full-header-container {
+    width: 100%;
 }
 
-.header-banner-container { 
-    width: 100%; 
-    height: 40vh; 
-    height: 40dvh; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    box-sizing: border-box; 
-    background: url('../assets/img/dog_background_header.jpg') no-repeat center center;
+.header-banner-container {
+    width: 100%;
+    height: 40vh;
+    height: 40dvh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+    overflow: hidden;
+
+    background: url('../assets/img/dog_background_header.jpg')
+        no-repeat center center;
     background-size: cover;
 }
 
 /* Header navigation container */
 .header-container {
     width: 100%;
+    height: 80px;
+
     position: sticky;
     top: 0;
     z-index: 1000;
+
     box-sizing: border-box;
-    height: 80px;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 
     background-color: var(--color-dark-gray);
+
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.445);
     border-bottom: 1px solid #1f1f1f1f;
 
     transform: translateY(0);
     transition: transform 0.3s ease;
-    
 }
 
+/* Hide the header when scrolling */
 .header-container.header-hidden {
     transform: translateY(-100%);
     box-shadow: none;
     pointer-events: none;
 }
 
-/* Nouveau wrapper conteneur identique à WebUniv */
+/* Header content wrapper */
 .header-wrap {
     width: 100%;
     height: 100%;
+
     margin: 0 auto;
     padding: 0 20px;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     position: relative;
+    box-sizing: border-box;
 }
 
-/***************************
-************Header logo*****
-***************************/
+/********************************
+************Header logo**********
+********************************/
 
+/* Remove underline from the logo link */
 .header-banner-container .logo,
 .header-banner-container .logo:hover,
 .header-banner-container .logo:focus,
@@ -78,90 +93,132 @@
     text-decoration: none;
 }
 
+/* Logo background */
 .header-banner-container .logo {
     padding: 25px 50px;
+
     border-radius: 70px;
+
     display: flex;
     align-items: center;
+
     background-color: #3535345d;
 }
 
+/* Hexagonal image background */
 .header-banner-container .logo-img-wrapper {
     background-color: #a7a7a78f;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+
+    clip-path: polygon(
+        50% 0%,
+        100% 25%,
+        100% 75%,
+        50% 100%,
+        0% 75%,
+        0% 25%
+    );
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     padding: 10px;
 }
 
+/* Logo image */
 .header-banner-container .logo-img {
     display: block;
+
     width: auto;
     height: auto;
+
     max-width: min(80vw, 500px);
+
     object-fit: contain;
 }
 
+/* Logo transitions */
 .header-banner-container .logo-img,
 .header-banner-container .logo-text-container {
-    transition: filter 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+    transition:
+        filter 0.3s ease,
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
 }
 
+/* Image hover effect */
 .header-banner-container .logo:hover .logo-img {
     filter: drop-shadow(0 0 20px var(--color-green));
     transform: scale(1.03);
 }
 
+/* Text hover effect */
 .header-banner-container .logo:hover .logo-text-container {
     text-shadow: 0 0 15px var(--color-gold);
     transform: scale(1.02);
 }
 
+/* Logo text */
 .header-banner-container .logo-text-container {
     color: var(--color-gold);
+
     -webkit-text-stroke: 0.5px var(--color-dark-gray);
+
     text-transform: uppercase;
     text-decoration: none;
+
     margin-left: 10px;
+
     text-align: center;
 }
 
+/* Main title */
 .header-banner-container .logo-title {
     font-size: 4rem;
     text-decoration: none;
 }
 
+/* Subtitle */
 .header-banner-container .logo-subtitle {
     font-size: 1.4rem;
     text-decoration: none;
 }
 
 /*********************************
-***************Header navbar******
+***************Navbar*************
 *********************************/
 
+/* Full desktop navbar */
 .header-nav {
     display: flex;
     align-items: center;
-    height: 100%;
-    gap: 15px;
-    width: 100%;
     justify-content: center;
+
+    height: 100%;
+    width: 100%;
+
+    gap: 15px;
 }
 
+/* Navigation links */
 .header-nav .navLink {
     color: var(--color-white);
     text-decoration: none;
+
     font-weight: bold;
     font-size: 1.2rem;
-    padding: 0px 30px;
+
+    padding: 0 30px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     height: 100%;
+
     position: relative;
     box-sizing: border-box;
+
     transition: color 0.3s ease;
 }
 
@@ -169,15 +226,22 @@
     color: #94918d;
 }
 
+/* Animated underline */
 .header-nav .navLink::after {
     content: '';
+
     position: absolute;
     bottom: 20px;
     left: 50%;
+
     width: 0;
     height: 3px;
+
     background-color: var(--color-green);
-    transition: width 0.3s ease, left 0.3s ease;
+
+    transition:
+        width 0.3s ease,
+        left 0.3s ease;
 }
 
 .header-nav .navLink:hover::after {
@@ -206,22 +270,32 @@
 .header-phone-btn {
     position: absolute;
     right: 50px;
+
+    min-width: 200px;
+
     display: inline-flex;
     justify-content: center;
     align-items: center;
+
     background: transparent;
+
     border: 2px solid var(--color-gold);
+    border-radius: 25px;
+
     color: var(--color-white);
-    padding: 12px 20px; 
+
+    padding: 12px 20px;
+
     font-size: 0.9rem;
     font-weight: bold;
-    border-radius: 25px;
+
     cursor: pointer;
+
     transition: all 0.3s ease;
+
     white-space: nowrap;
     box-sizing: border-box;
     text-decoration: none;
-    min-width:200px;
 }
 
 .header-phone-btn:hover {
@@ -241,14 +315,19 @@
 
 .menu-toggle {
     display: none;
+
     flex-direction: column;
     justify-content: space-between;
+
     width: 30px;
     height: 21px;
+
     background: transparent;
     border: none;
+
     cursor: pointer;
     padding: 0;
+
     transition: all 0.3s ease;
 }
 
@@ -256,128 +335,473 @@
     filter: drop-shadow(0 0 15px var(--color-white));
 }
 
+/* Burger bars */
 .menu-toggle .bar {
     width: 100%;
     height: 3px;
+
     background-color: #ffffff;
     border-radius: 5px;
+
     transition: all 0.3s ease;
 }
 
-/********************************
-******** Responsive Rules *******
+/*********************************
+******** Responsive navbar *******
 *********************************/
-/* Tablets + Mobiles / Tablets landscape */
-@media (max-width: 1024px), (max-width: 1500px) and (orientation: landscape){
-    /* --- AJOUT : Adaptation responsive du logo et de ses textes sur mobile --- */
-    .header-banner-container .logo {
-        padding: 15px 20px; /* Réduit drastiquement le padding géant de bureau */
-        border-radius: 40px;
-        max-width: 92vw;    /* Empêche le logo de dépasser de l'écran */
-        box-sizing: border-box;
-    }
 
-    .header-banner-container .logo-title {
-        font-size: 1.7rem;  /* Passe de 4rem à une taille adaptée mobile */
-    }
+/*
+ * Activate burger navigation on:
+ * - screens up to 1024px wide;
+ * - landscape screens up to 1500px wide.
+ */
+@media (max-width: 1024px),
+       (max-width: 1500px) and (orientation: landscape) {
 
-    .header-banner-container .logo-subtitle {
-        font-size: 0.85rem; /* Passe de 1.4rem à une taille lisible et compacte */
-    }
-
-    .header-banner-container .logo-img {
-        max-width: 50px;    /* Réduit l'image si besoin pour qu'elle ne prenne pas toute la place */
-    }
-    /* ------------------------------------------------------------------------- */
-
-    /* menu burger in center of navbar */
+    /* Display burger */
     .menu-toggle {
         display: flex;
     }
 
-    /* Animations burger */
+    /* Burger animation */
     .menu-toggle.active .bar:nth-child(1) {
         transform: translateY(9px) rotate(45deg);
     }
+
     .menu-toggle.active .bar:nth-child(2) {
         opacity: 0;
     }
+
     .menu-toggle.active .bar:nth-child(3) {
         transform: translateY(-9px) rotate(-45deg);
     }
 
-    /* drop-down mobile menu */
+    /* Dropdown menu */
     .header-nav {
         position: absolute;
-        top:100%;
+
+        top: 100%;
         left: 0;
         right: 0;
+
+        width: 100%;
+        height: auto;
+
+        display: flex;
         flex-direction: column;
-        background: rgba(24, 26, 27, 0.98); 
+        align-items: stretch;
+
         gap: 0;
-        
-        
+
+        background: rgba(24, 26, 27, 0.98);
+
         opacity: 0;
         visibility: hidden;
         transform: translateY(-10px);
-        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-        
+
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease,
+            visibility 0.3s ease;
+
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-        padding: 10px 0 20px 0;
-        height:auto;
-        
+
+        padding: 10px 0 20px;
+
+        box-sizing: border-box;
     }
 
-    /* Quand nav-open est actif, tout s'affiche à 100% de la hauteur naturelle du contenu */
+    /* Open dropdown menu */
     .header-nav.nav-open {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
     }
 
-    /* Liens du menu mobile */
+    /* Dropdown navigation links */
     .header-nav .navLink {
-        padding: 16px 20px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         width: 100%;
+        height: auto;
+
+        padding: 16px 20px;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
         box-sizing: border-box;
         text-align: center;
-        height: auto;
     }
-    
+
     .header-nav .navLink:hover {
         background: rgba(255, 255, 255, 0.05);
     }
 
+    /* Disable desktop underline animation */
     .header-nav .navLink::after {
         display: none;
     }
 
+    /* Active link */
     .header-nav .navLink.active {
         background: rgba(217, 135, 28, 0.15);
+
         border-left: 4px solid var(--color-gold);
+
         color: var(--color-gold);
     }
 
-    /* Le bouton téléphone se place naturellement en bas de la liste */
+    /* Phone button inside dropdown */
     .header-phone-btn {
         position: static;
-        margin: 20px auto 0 auto;
+
+        margin: 20px auto 0;
+
         width: 80%;
         max-width: 280px;
+        min-width: 0;
+
         display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
 
+/********************************
+******* Responsive base *********
+********************************/
 
-/* Mobile landscape */
-@media (max-width: 899px) and (orientation: landscape) {
-    
+/*
+ * General responsive sizing for screens up to 1024px.
+ * Individual device orientations are adjusted below.
+ */
+@media (max-width: 1024px) {
 
-    .header-nav{
-        overflow-y: scroll;
-        height: 90vh;
+    /* Banner */
+    .header-banner-container {
+        height: clamp(300px, 48vh, 460px);
+        height: clamp(300px, 48svh, 460px);
+
+        padding: 20px 10px;
+    }
+
+    /* Logo background */
+    .header-banner-container .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: clamp(14px, 3vw, 22px);
+
+        width: fit-content;
+        max-width: 98%;
+
+        padding: clamp(16px, 3.5vw, 28px);
+
+        border-radius: 36px;
+
+        box-sizing: border-box;
+    }
+
+    /* Image wrapper */
+    .header-banner-container .logo-img-wrapper {
+        width: clamp(100px, 24vw, 150px);
+        height: clamp(100px, 24vw, 150px);
+
+        padding: 10px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        flex: 0 0 auto;
+
+        box-sizing: border-box;
+    }
+
+    /* Image */
+    .header-banner-container .logo-img {
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        max-width: 100%;
+        max-height: 100%;
+
+        object-fit: contain;
+    }
+
+    /* Text wrapper */
+    .header-banner-container .logo-text-container {
+        flex: 1 1 auto;
+        min-width: 0;
+
+        margin-left: 0;
+
+        text-align: center;
+    }
+
+    /* Main title */
+    .header-banner-container .logo-title {
+        font-size: clamp(1.8rem, 7vw, 3rem);
+        line-height: 1.15;
+
+        overflow-wrap: break-word;
+    }
+
+    /* Subtitle */
+    .header-banner-container .logo-subtitle {
+        font-size: clamp(0.95rem, 3.5vw, 1.3rem);
+        line-height: 1.35;
+
+        overflow-wrap: break-word;
+    }
+}
+
+/********************************
+******** Mobile portrait ********
+********************************/
+
+@media (max-width: 599px) and (orientation: portrait) {
+
+    /* Banner height */
+    .header-banner-container {
+        height: clamp(260px, 42vh, 340px);
+        height: clamp(260px, 42svh, 340px);
+
+        padding: 14px 8px;
+    }
+
+    /* Logo panel */
+    .header-banner-container .logo {
+        width: 100%;
+        max-width: 100%;
+
+        gap: 8px;
+
+        padding: 12px 8px;
+
+        border-radius: 28px;
+
+        box-sizing: border-box;
+    }
+
+    /* Larger hexagon */
+    .header-banner-container .logo-img-wrapper {
+        width: clamp(96px, 28vw, 118px);
+        height: clamp(96px, 28vw, 118px);
+
+        padding: 6px;
+
+        flex: 0 0 auto;
+
+        box-sizing: border-box;
+    }
+
+    .header-banner-container .logo-img {
+        width: 100%;
+        height: 100%;
+
+        max-width: 100%;
+        max-height: 100%;
+
+        object-fit: contain;
+    }
+
+    /* Text receives remaining width */
+    .header-banner-container .logo-text-container {
+        flex: 1 1 0;
+        min-width: 0;
+
+        margin-left: 0;
+
+        text-align: center;
+    }
+
+    /* Larger title, kept on a single line */
+    .header-banner-container .logo-title {
+        font-size: clamp(1.6rem, 7.55vw, 2rem);
+        line-height: 1.1;
+
+        white-space: nowrap;
+    }
+
+    /* Smaller subtitle, kept on a single line */
+    .header-banner-container .logo-subtitle {
+        font-size: clamp(0.6rem, 1.85vw, 0.7rem);
+        line-height: 1.2;
+
         
+
+        white-space: nowrap;
     }
 }
 
+
+/********************************
+******* Tablet portrait *********
+********************************/
+
+@media (min-width: 600px)
+   and (max-width: 1024px)
+   and (orientation: portrait) {
+
+    /* Larger hexagon */
+    .header-banner-container .logo-img-wrapper {
+        width: clamp(155px, 20vw, 185px);
+        height: clamp(155px, 20vw, 185px);
+
+        padding: 12px;
+
+        flex: 0 0 auto;
+
+        box-sizing: border-box;
+    }
+
+    .header-banner-container .logo-img {
+        width: 100%;
+        height: 100%;
+
+        max-width: 100%;
+        max-height: 100%;
+
+        object-fit: contain;
+    }
+}
+
+/********************************
+******** Mobile landscape *******
+********************************/
+
+@media (max-width: 899px) and (orientation: landscape) {
+
+    /* Dropdown can scroll on short screens */
+    .header-nav {
+        height: 80vh;
+        overflow-y: auto;
+    }
+
+    /* Shorter banner */
+    .header-banner-container {
+        height: clamp(190px, 50vh, 280px);
+        height: clamp(190px, 50svh, 280px);
+
+        padding: 10px;
+    }
+
+    /* Logo panel */
+    .header-banner-container .logo {
+        gap: 14px;
+
+        padding: 12px 20px;
+
+        border-radius: 26px;
+
+        max-width: 98%;
+        box-sizing: border-box;
+    }
+
+    /* Larger hexagon */
+    .header-banner-container .logo-img-wrapper {
+        width: clamp(105px, 32vh, 145px);
+        height: clamp(105px, 32vh, 145px);
+
+        padding: 6px;
+
+        flex: 0 0 auto;
+
+        box-sizing: border-box;
+    }
+
+    .header-banner-container .logo-img {
+        width: 100%;
+        height: 100%;
+
+        max-width: 100%;
+        max-height: 100%;
+
+        object-fit: contain;
+    }
+
+    .header-banner-container .logo-text-container {
+        flex: 1 1 auto;
+        min-width: 0;
+
+        margin-left: 0;
+    }
+
+    /* Larger title */
+    .header-banner-container .logo-title {
+        font-size: clamp(1.6rem, 4.6vw, 2.4rem);
+        line-height: 1.15;
+    }
+
+    .header-banner-container .logo-subtitle {
+        font-size: clamp(0.75rem, 2.2vw, 1rem);
+        line-height: 1.3;
+    }
+}
+
+/********************************
+******* Tablet landscape ********
+********************************/
+
+@media (min-width: 900px) and (max-width: 1500px) and (orientation: landscape) {
+
+    /* Reduce the banner height */
+    .header-banner-container {
+        height: clamp(175px, 28vh, 250px);
+        height: clamp(175px, 28svh, 250px);
+
+        padding: 10px 16px;
+    }
+
+    /* Keep logo within the available banner width */
+    .header-banner-container .logo {
+        max-width: 98%;
+
+        padding: 10px 24px;
+
+        gap: 14px;
+
+        box-sizing: border-box;
+    }
+
+    /* Responsive image dimensions */
+    .header-banner-container .logo-img-wrapper {
+        width: clamp(105px, 12vw, 145px);
+        height: clamp(105px, 12vw, 145px);
+
+        padding: 8px;
+
+        flex: 0 0 auto;
+
+        box-sizing: border-box;
+    }
+
+    .header-banner-container .logo-img {
+        width: 100%;
+        height: 100%;
+
+        max-width: 100%;
+        max-height: 100%;
+
+        object-fit: contain;
+    }
+
+    .header-banner-container .logo-text-container {
+        flex: 1 1 auto;
+        min-width: 0;
+
+        margin-left: 0;
+    }
+
+    .header-banner-container .logo-title {
+        font-size: clamp(2rem, 3.5vw, 3rem);
+        line-height: 1.15;
+    }
+
+    .header-banner-container .logo-subtitle {
+        font-size: clamp(1rem, 1.3vw, 1.2rem);
+        line-height: 1.3;
+    }
+}
