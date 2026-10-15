@@ -63,24 +63,26 @@ function Header() {
             <header
                 className={`header-container ${!isVisible ? 'header-hidden' : ''}`}
                 ref={headerRef}
-            >
-                <div className="burger-wrapper">
-                    <button
-                        className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
-                        onClick={toggleMenu}
-                        aria-label="Ouvrir le menu"
-                        aria-expanded={isMenuOpen}
-                    >
-                        <span className="bar"></span>
-                        <span className="bar"></span>
-                        <span className="bar"></span>
-                    </button>
+            >   
+                <div className="header-wrap">
+                    <div className="burger-wrapper">
+                        <button
+                            className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
+                            onClick={toggleMenu}
+                            aria-label="Ouvrir le menu"
+                            aria-expanded={isMenuOpen}
+                        >
+                            <span className="bar"></span>
+                            <span className="bar"></span>
+                            <span className="bar"></span>
+                        </button>
+                    </div>
+                    
+                    <Navbar
+                        className={`header-nav ${isMenuOpen ? 'nav-open' : ''}`}
+                        onLinkClick={closeMenu}
+                    />
                 </div>
-                
-                <Navbar
-                    className={`header-nav ${isMenuOpen ? 'nav-open' : ''}`}
-                    onLinkClick={closeMenu}
-                />
             </header>
         </>
 
