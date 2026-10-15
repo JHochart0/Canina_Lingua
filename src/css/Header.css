@@ -627,12 +627,9 @@
 
     /* Smaller subtitle, kept on a single line */
     .header-banner-container .logo-subtitle {
-        font-size: clamp(0.6rem, 1.85vw, 0.7rem);
+        font-size: clamp(0.8rem, 2vw, 0.85rem);
         line-height: 1.2;
 
-        
-
-        white-space: nowrap;
     }
 }
 
