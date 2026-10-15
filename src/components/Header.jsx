@@ -76,7 +76,7 @@ function Header() {
                         <span className="bar"></span>
                     </button>
                 </div>
-
+                
                 <Navbar
                     className={`header-nav ${isMenuOpen ? 'nav-open' : ''}`}
                     onLinkClick={closeMenu}

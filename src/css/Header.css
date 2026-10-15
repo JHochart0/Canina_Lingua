@@ -144,7 +144,7 @@
 }
 
 /* header navbar links*/
-.header-nav a {
+.header-nav .navLink {
     color: var(--color-white);
     text-decoration: none;
     font-weight: bold;
@@ -160,12 +160,12 @@
 }
 
 /* navbar links hover */
-.header-nav a:hover{
+.header-nav .navLink:hover{
     color: #94918d;
 }
 
 /* Création de la ligne de soulignement */
-.header-nav a::after {
+.header-nav .navLink::after {
     content: '';
     position: absolute;
     bottom: 20px;
@@ -177,7 +177,7 @@
 }
 
 /* Animation au survol */
-.header-nav a:hover::after {
+.header-nav .navLink:hover::after {
     width: 80%;
     left: 10%;
 }
@@ -188,13 +188,13 @@
 *********************************/
 
 /* Active state for standard links */
-.header-nav a.active {
+.header-nav .navLink.active {
     color: var(--color-gold);
 }
 
 /* active state & hover for underline effect*/
-.header-nav a:hover::after,
-.header-nav a.active::after {
+.header-nav .navLink:hover::after,
+.header-nav .navLink.active::after {
     width: 80%;
     left: 10%;
 }
@@ -206,7 +206,7 @@
 .header-phone-btn{
     position:absolute;
     right: 50px;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     background: transparent;
@@ -218,12 +218,16 @@
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
-    min-width: 200px;
+    min-width:200px;
+    white-space: nowrap;
+    box-sizing: border-box;
+    text-decoration: none;
 }
 
 .header-phone-btn:hover {
     background: #d9871c18;
     color: var(--color-gold);
+    border-color:var(--color-green);
 }
 
 .header-phone-btn .phone-icon {

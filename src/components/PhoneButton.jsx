@@ -1,24 +1,15 @@
-import React, {useState} from 'react'
-
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 
-//this component is a button to show the phone number
 function PhoneButton(props) {
     const className = props.className;
 
-    const [showPhoneNumber, setShowPhoneNumber] = useState(false);
-
-    //function to change the content of the phone number button when the user clicks on it
-    const togglePhoneButton = () => {
-        setShowPhoneNumber(prev => !prev);
-    }
-
     return (
-        <button onClick={togglePhoneButton} className={className}>
+        <a href="tel:0661970116" className={className}>
             <FontAwesomeIcon className="phone-icon" icon={faPhone} />
-            {showPhoneNumber ? '06 61 97 01 16' : ' Appelez-nous'}
-        </button>
+            <span>06 61 97 01 16</span>
+        </a>
     );
 }
 
