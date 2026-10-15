@@ -269,7 +269,26 @@
 *********************************/
 /* Tablets + Mobiles / Tablets landscape */
 @media (max-width: 1024px), (max-width: 1500px) and (orientation: landscape){
+    /* --- AJOUT : Adaptation responsive du logo et de ses textes sur mobile --- */
+    .header-banner-container .logo {
+        padding: 15px 20px; /* Réduit drastiquement le padding géant de bureau */
+        border-radius: 40px;
+        max-width: 92vw;    /* Empêche le logo de dépasser de l'écran */
+        box-sizing: border-box;
+    }
 
+    .header-banner-container .logo-title {
+        font-size: 1.7rem;  /* Passe de 4rem à une taille adaptée mobile */
+    }
+
+    .header-banner-container .logo-subtitle {
+        font-size: 0.85rem; /* Passe de 1.4rem à une taille lisible et compacte */
+    }
+
+    .header-banner-container .logo-img {
+        max-width: 50px;    /* Réduit l'image si besoin pour qu'elle ne prenne pas toute la place */
+    }
+    /* ------------------------------------------------------------------------- */
 
     /* menu burger in center of navbar */
     .menu-toggle {
