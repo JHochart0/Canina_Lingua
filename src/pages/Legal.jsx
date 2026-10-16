@@ -19,11 +19,21 @@ function Legal() {
             <div className="legal-section">
                 <h2>Mentions légales</h2>
                 <div className="legal-section-text">
-                    <p><strong>Nom commercial : </strong>nom commercial</p>
-                    <p><strong>Représentant légal et Directeur de la publication : </strong>nom directeur structure</p>
-                    <p><strong>Adresse : </strong>adresse complète</p>
-                    <p><strong>Numéro de téléphone : </strong>06 XX XX XX XX</p> 
-                    <p><strong>Adresse électronique : </strong>entreprise@gmail.com</p>
+                    <p><strong>Nom commercial : </strong>Canina Lingua</p>
+                    <p><strong>Forme Juridique : </strong>Entrepreneur individuel</p>
+                    <p><strong>Forme d'exercice </strong>Libérale non règlementée, Commerciale, Artisanale</p>
+                    <p><strong>Représentant légal et Directeur de la publication : </strong>David LEVEL</p>
+                    <p><strong>SIREN : </strong>888 209 483</p>
+                    <p><strong>SIRET (siège) : </strong>888 209 483 00021</p>
+                    <p><strong>Date d'immatriculation au RNE : </strong>20/08/2020</p>
+                    <p><strong>Date de début d'activité : </strong>08/09/2020</p>
+                    <p><strong>Activité principale : </strong>Education comportementaliste canin en clientèle et vente d'articles et accessoires pour animaux.</p>
+                    <p><strong>Code APE : </strong>9609Z - Autres services personnels n.c.a.</p>
+                    <p><strong>Code APRM : </strong>9609ZP - Toilettage d'animaux de compagnie</p>
+                    
+                    <p><strong>Adresse de l'entreprise : </strong>16 rue de l'Amiral Courbet, Appartement 5, 62480 Le Portel, France</p> 
+                    <p><strong>Numéro de téléphone : </strong>06 61 97 01 16</p> 
+                    <p><strong>Adresse électronique : </strong>david.level@caninalingua.fr</p>
                 </div>
             </div>
 
@@ -67,7 +77,7 @@ function Legal() {
 
             {/* Part 3: pricing, Host et credits */}
             <div className="hosting-section">
-                <h2>Hébergement, Tarification et crédits</h2>
+                <h2>Hébergement et crédits</h2>
                 <div className="hosting-section-text">
 
                     <h3>Centre serveur et nom de domaine :</h3>
@@ -83,7 +93,7 @@ function Legal() {
                     <p><strong>WebUniv</strong> - Jovany Hochart</p>
                     <p><strong>Liens de contact :</strong></p>
                     <p>
-                        <a href="mailto:webuniv.pro@gmail.com">Envoyer un mail</a> | <a href="https://www.webuniv.fr">Autre contact</a>
+                        <a href="mailto:webuniv.pro@gmail.com">Envoyer un mail</a> | <a href="https://www.webuniv.fr/contact">Autre contact</a>
                     </p>
                 </div>
             </div>

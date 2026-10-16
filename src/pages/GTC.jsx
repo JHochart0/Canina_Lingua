@@ -1,31 +1,37 @@
 import React, { useEffect } from 'react';
-
 import '../css/GTC.css';
-
 import NavLink from "../components/NavLink.jsx";
 
-// GTC page
+// General Terms and Conditions page
 function GTC() {
-    // change the title
+
+    // Change the tab title
     useEffect(() => {
-        document.title = "Canina Lingua - Conditions générales de ventes";
+        document.title = "WebUniv | Conditions générales de prestation de service";
     }, []);
-
+    
     return (
-        <div className="legal-container">
-            <h1>Conditions générales de ventes</h1>
+        <div className="GTC-container">
+            <h1>Conditions Générales de Prestations de Service</h1>
 
-            {/* Part 1 of the GTC*/}
-            <div className="legal-section">
-                <h2>CGV</h2>
-                <div className="legal-section-text">
-                    <p><strong>Exemple</strong></p>
-                    <p>pour les CGV</p>
+            <div className="gtc-section">
+                <h2>Titre section articles</h2>
+                <div className="gtc-section-text">
+                    <h3>Article 1 - Exemple d'article</h3>
+                    <p>
+                        Ceci est le contenu d'un article
+                    </p>
 
                 </div>
             </div>
 
             
+
+            <div className="gtc-link">
+                <p>Besoin de renseignements ? </p>
+                <NavLink to="/contact" content="Contactez-nous !" id=""/>
+                
+            </div>
         </div>
     );
 }
