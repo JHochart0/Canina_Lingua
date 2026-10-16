@@ -2,7 +2,7 @@ import React from 'react';
 
 import { NavLink } from 'react-router-dom';
 
-import logo from '../assets/img/Canina_Lingua_Logo_Full.png';
+import logo from '../assets/img/Canina_Lingua_Logo_Full.webp';
 
 //this component is the logo of the website that brings to the homepage when clicked on
 function Logo() {

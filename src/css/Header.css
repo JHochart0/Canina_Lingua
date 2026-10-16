@@ -28,8 +28,7 @@
     box-sizing: border-box;
     overflow: hidden;
 
-    background: url('../assets/img/dog_background_header.jpg')
-        no-repeat center center;
+    background: url('../assets/img/Canina_Lingua_dog_background_header.webp') no-repeat center center;
     background-size: cover;
 }
 
