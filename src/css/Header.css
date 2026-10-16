@@ -623,6 +623,14 @@
 
 @media (min-width: 600px) and (max-width: 1024px) and (orientation: portrait) {
 
+    /* Logo panel */
+    .header-banner-container .logo {
+        max-width: 95%;
+        padding: 10px 16px;
+        gap: 12px;
+        box-sizing: border-box;
+    }
+
     /* logo img wrapper */
     .header-banner-container .logo-img-wrapper {
         width: clamp(155px, 20vw, 185px);
@@ -645,6 +653,27 @@
 
         object-fit: contain;
     }
+
+    /*logo text container*/
+    .header-banner-container .logo-text-container {
+        flex: 1 1 auto;
+        min-width: 0;
+
+        margin-left: 0;
+    }
+
+    /*logo title*/
+    .header-banner-container .logo-title {
+        font-size: clamp(3rem, 4vw, 5rem);
+        line-height: 1.15;
+    }
+
+    /*logo subtitle*/
+    .header-banner-container .logo-subtitle {
+        font-size: clamp(1.5rem, 2vw, 2.5rem);
+        line-height: 1.3;
+    }
+
 }
 
 /********************************
