@@ -16,7 +16,7 @@ function Photos() {
         document.title = "Canina Lingua - Galerie photos";
 
         // Google script calling the google drive API, change the link of each new deployment
-        const url = `lien deploiement google script`;
+        const url = `https://script.google.com/macros/s/AKfycbzBUcyxZY1naHAliQ0NwNreurJG8pds3TstxytTt9NGwWjZGKu5bv4k4G6Q7CBs3q3v/exec`;
 
         fetch(url)
             .then((res) => res.json())
