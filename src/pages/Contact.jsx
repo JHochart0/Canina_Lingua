@@ -67,6 +67,23 @@ function Contact() {
     return (
         <div className="contact-container">
 
+            {/* Hero banner */}
+            <div className="contact-hero-banner fade-in-up">
+                <div className="contact-hero-banner-overlay"></div>
+                
+                <div className="contact-hero-banner-card">
+                    <div className="contact-hero-paw-bg"></div>
+                    
+                    <h1 className="contact-hero-banner-title">Contactez-moi !</h1>
+                    
+                    <p className="contact-hero-banner-subtitle">
+                        Description à compléter pour la page contact.
+                    </p>
+
+                    
+                </div>
+            </div>
+
             <div className="contact-wrap">
                 <div className="contact-infos-side">
                     <h1 className="contact-infos-title">Informations</h1>
