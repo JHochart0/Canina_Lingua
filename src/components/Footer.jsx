@@ -57,8 +57,6 @@ function Footer() {
                 <Schedules className="footer" />
             </div>
 
-            
-
             {/*legal part of the footer*/}
             <div className="footer-bottom">
                 <NavLink to="/gtc" content="Conditions générales de prestations de service" id="footer-gtcLink" />

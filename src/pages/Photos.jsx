@@ -32,35 +32,34 @@ function Photos() {
     return (
         <div className="photos-container">
 
-            {/* Grande Bannière Hero immersive */}
-            <div className="hero-banner fade-in-up">
-                <div className="hero-banner-overlay"></div>
+            {/* Hero banner */}
+            <div className="photos-hero-banner fade-in-up">
+                <div className="photos-hero-banner-overlay"></div>
                 
-                <div className="hero-banner-card">
-                    <div className="hero-paw-bg"></div>
+                <div className="photos-hero-banner-card">
+                    <div className="photos-hero-paw-bg"></div>
                     
+                    <h1 className="photos-hero-banner-title">Galerie Photos</h1>
                     
-                    <h1 className="hero-banner-title">Galerie Photos</h1>
-                    
-                    <p className="hero-banner-subtitle">
+                    <p className="photos-hero-banner-subtitle">
                         Découvrez en images le quotidien, les séances d'éducation et la complicité partagée avec nos compagnons à quatre pattes.
                     </p>
 
-                    <div className="hero-banner-stats">
-                        <div className="stat-item">
-                            <span className="stat-value">{loading ? "..." : images.length}</span>
-                            <span className="stat-label">Photos immortalisées</span>
+                    <div className="photos-hero-banner-stats">
+                        <div className="photos-stat-item">
+                            <span className="photos-stat-value">{loading ? "..." : images.length}</span>
+                            <span className="photos-stat-label">Photos immortalisées</span>
                         </div>
-                        <div className="stat-divider"></div>
-                        <div className="stat-item">
-                            <span className="stat-value">100%</span>
-                            <span className="stat-label">Méthode Éthique</span>
+                        <div className="photos-stat-divider"></div>
+                        <div className="photos-stat-item">
+                            <span className="photos-stat-value">100%</span>
+                            <span className="photos-stat-label">Méthode Éthique</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {/* Galerie de photos */}
+            {/* Photos gallery */}
             <div className="photos-gallery-container fade-in-up">
                 {loading && <div className="photos-gallery-loader"></div>}
                 {!loading && images.length === 0 && (

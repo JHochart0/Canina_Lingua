@@ -5,6 +5,7 @@
     --color-white: #d3cfc9;
     --color-dark-gray: #181a1b;
     --font-main: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;;
+    --dog-paw-svg: url("/img_Canina_Lingua/dog-paw.svg");
 }
 
 
@@ -12,21 +13,16 @@
 ********* CONTACT CONTAINER ******
 *********************************/
 .contact-container {
-    min-height: 110vh;
     width: 100%;
-    color: var(--color-dark-gray);
     font-family: var(--font-main);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding: 60px 20px;
     margin: auto;
 }
-
-
 
 /*********************************
 ******* CONTACT WRAPPER **********
@@ -34,14 +30,131 @@
 .contact-wrap {
     position: relative;
     z-index: 50;
-    width: 65.5vw;
+    width: 70vw;
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 30px;
-    backdrop-filter: blur(3px);
-    padding: 40px;
+    padding: 40px 0;
     border-radius: 16px;
+}
+
+/*********************************
+**********CONTACT INFOS SIDE******
+*********************************/
+.contact-infos-side{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    background: var(--color-dark-gray);
+    border: 1px solid rgba(110, 185, 233, 0.2);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(24, 49, 83, 0.04);
+    min-height: 75vh;
+    min-width: 35vw;
+    color:var(--color-white);
+}
+
+.contact-infos-title{
+    color: var(--color-gold);
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    margin-bottom:20px;
+    font-weight:800;
+    font-size:2.5rem;
+}
+
+
+/***** Schedules******/
+.contact-infos-schedules {
+    position: relative;
+    z-index: 1;
+    width: 270px;
+    height: 270px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 10px 0;
+    background-color: #bfd7b02f;
+
+    clip-path: polygon(
+        50% 0%,
+        100% 25%,
+        100% 75%,
+        50% 100%,
+        0% 75%,
+        0% 25%
+    );
+}
+
+.contact-infos-schedules::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    height: 70%;
+
+    transform: translate(-50%, -50%);
+
+    background: var(--color-green);
+    opacity: 0.7;
+
+    -webkit-mask-image: var(--dog-paw-svg);
+    mask-image: var(--dog-paw-svg);
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    filter: drop-shadow(0 0 18px rgba(91, 145, 78, 0.6));
+
+    z-index: -1;
+    pointer-events: none;
+}
+
+.contact-infos-schedules-h1 {
+    color: var(--color-gold);
+    -webkit-text-stroke: 1.2px var(--color-dark-gray);
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 800;
+    z-index: 10;
+}
+
+.contact-infos-schedules-hours {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    z-index: 10;
+}
+
+.contact-infos-schedules-h2 {
+    font-size: 1.5rem;
+    color: var(--color-gold);
+    -webkit-text-stroke: 1px var(--color-dark-gray);
+    letter-spacing: 2px;
+    font-weight: 800; 
+}
+
+.contact-infos-schedules-h3 {
+    font-size: 1.2rem;
+    color: var(--color-white);
+    font-weight: 800; 
+    -webkit-text-stroke: 0.6px var(--color-dark-gray);
+    letter-spacing: 1px;
 }
 
 
@@ -49,13 +162,23 @@
 ******* CONTACT FORM SIDE ********
 *********************************/
 .contact-form-section {
-    background: rgba(223, 223, 223, 0.8);
+    background: var(--color-dark-gray);
     border: 1px solid rgba(110, 185, 233, 0.2);
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(24, 49, 83, 0.04);
     min-height: 75vh;
-    min-width: 30vw;
+    min-width: 35vw;
+}
+
+.contact-form-title{
+    color: var(--color-gold);
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    margin-bottom:20px;
+    font-weight:800;
+    font-size:2.5rem;
 }
 
 .contact-form-element {
@@ -65,8 +188,8 @@
 }
 
 .contact-form-note {
-    font-size: 0.8rem;
-    color: var(--color-dark-gray);
+    font-size: 0.9rem;
+    color: var(--color-green);
     font-style: italic;
     margin: 0;
     align-self: flex-start;
@@ -81,7 +204,7 @@
 .contact-form-group label {
     font-size: 0.85rem;
     font-weight: bold;
-    color: var(--color-dark-gray);
+    color: var(--color-green);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -90,7 +213,7 @@
 .contact-form-group textarea {
     width: 100%;
     padding: 14px;
-    border: 2px solid #e2e8f0;
+    border: 3px solid var(--color-white);
     border-radius: 10px;
     font-family: var(--font-main);
     font-size: 0.95rem;
@@ -103,7 +226,7 @@
 .contact-form-group input:focus,
 .contact-form-group textarea:focus {
     outline: none;
-    border-color: var(--color-dark-gray);
+    border-color: var(--color-gold);
     box-shadow: 0 0 8px rgba(110, 185, 233, 0.15);
 }
 
@@ -116,20 +239,20 @@
 
 .contact-privacy-text {
     font-size: 0.82rem;
-    color: var(--color-dark-gray);
+    color:var(--color-white);
     line-height: 1.5;
     margin: -4px 0 4px 0;
 }
 
 .contact-privacy-text a {
-    color: var(--color-dark-gray);
+    color: #2d87ee;
     text-decoration: underline;
     font-weight: 600;
     transition: color 0.2s ease;
 }
 
 .contact-privacy-text a:hover {
-    color: var(--color-white);
+    color: #85b1ee;
 }
 
 /*********************************
@@ -144,24 +267,27 @@
 
 .contact-submit-btn {
     display: inline-block;
-    text-align: center;
-    cursor: pointer;
-   
-    border: 2px solid var(--color-light-blue);
-    padding: 14px 35px;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 1rem;
+    text-decoration: none;
+    margin:auto;
     color: var(--color-white);
-    box-shadow: 0 0 15px rgba(110, 185, 233, 0.2);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background-color: var(--color-dark-gray);
+    padding: 14px 32px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: 2px solid var(--color-gold);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(24, 26, 27, 0.2); 
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+    cursor: pointer;
+    width:45%;
 }
 
 .contact-submit-btn:hover {
-    color: var(--color-white);
-    box-shadow: 0 0 25px rgba(110, 185, 233, 0.6);
-    border-color: var(--color-white);
+    box-shadow: 0 0 15px rgba(91, 145, 78, 0.5), 0 6px 16px rgba(0, 0, 0, 0.3);
     transform: translateY(-2px);
+    background: #d9871c18;
+    color: var(--color-gold);
+    border-color: var(--color-green);
 }
 
 .contact-submit-btn:disabled {

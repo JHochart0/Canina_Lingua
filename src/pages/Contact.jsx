@@ -66,8 +66,16 @@ function Contact() {
 
     return (
         <div className="contact-container">
+
             <div className="contact-wrap">
+                <div className="contact-infos-side">
+                    <h1 className="contact-infos-title">Informations</h1>
+                    
+                    <Schedules className="contact-infos"/>
+                </div>
+                
                 <div className="contact-form-section">
+                    <h1 className="contact-form-title">Me contacter</h1>
                     <form onSubmit={handleSubmit} className="contact-form-element">
                         <input type="hidden" name="_captcha" value="false" />
 
@@ -143,6 +151,7 @@ function Contact() {
                     </form>
                 </div>
             </div>
+            
         </div>
     );
 }
