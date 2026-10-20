@@ -11,7 +11,6 @@ function useRevealOnScroll(selector, refreshKey) {
                     if (entry.isIntersecting) {
                         entry.target.classList.add("visible");
 
-                        // L'élément a été révélé : on ne le surveille plus.
                         observer.unobserve(entry.target);
                     }
                 });
