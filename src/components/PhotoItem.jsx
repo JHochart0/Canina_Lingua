@@ -5,6 +5,7 @@ function PhotoItem({ file }) {
     const [isOpen, setIsOpen] = useState(false);
     const [isLoaded, setIsLoaded] = useState(false);
 
+
     useEffect(() => {
         // build the url of the HD version
         const url = `https://lh3.googleusercontent.com/d/${file.id}=w800`;
@@ -18,19 +19,33 @@ function PhotoItem({ file }) {
     return (
         <>
             {/* Thumbnail image */}
-            <img
-                src={file.webContentLink}
-                alt={`NOM_STRUCTURE_${file.name}`}
-                className="photos-gallery-image"
-                onError={(e) => {
-                    e.target.src = file.webContentLink;
-                }}
-                onClick={() => setIsOpen(true)}
-            />
+            <div className="zoom-animation">
+                <img
+                    src={file.webContentLink}
+                    alt={`NOM_STRUCTURE_${file.name}`}
+                    className="photos-gallery-image"
+                    onError={(e) => {
+                        e.target.src = file.webContentLink;
+                    }}
+                    onClick={() => setIsOpen(true)}
+                />
+            </div>
 
             {/* Lightbox */}
             {isOpen && (
                 <div className="lightbox" onClick={() => setIsOpen(false)}>
+                    {/* Bouton croix pour fermer */}
+                    <button 
+                        className="lightbox-close" 
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            setIsOpen(false);
+                        }}
+                        aria-label="Fermer"
+                    >
+                        &times;
+                    </button>
+
                     {/* Loader if the HD image isn't loaded yet */}
                     {!isLoaded && <div className="lightbox-loader"></div>}
 
@@ -39,10 +54,10 @@ function PhotoItem({ file }) {
                             src={file.webContentLink}
                             alt={`NOM_STRUCTURE_${file.name}`}
                             className="lightbox-image"
+                            onClick={(e) => e.stopPropagation()}
                             onError={(e) => {
                                 e.target.src = file.webContentLink;
                             }}
-                            
                         />
                     )}
                 </div>

@@ -37,5 +37,5 @@ body{
     position: relative;
     overflow : hidden;
     min-height:80vh;
-    /*background à mettre ici*/
+    background: var(--color-white);
 }

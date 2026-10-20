@@ -1,27 +1,30 @@
 import React, { useEffect } from "react";
 
 // this hook is used to trigger the css animation when the element is shown after scrollin
-function useRevealOnScroll(selector) {
+function useRevealOnScroll(selector, refreshKey) {
     useEffect(() => {
         const elements = document.querySelectorAll(selector);
 
         const observer = new IntersectionObserver(
             (entries) => {
-                entries.forEach(entry => {
+                entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add("visible");
+
+                        // L'élément a été révélé : on ne le surveille plus.
+                        observer.unobserve(entry.target);
                     }
                 });
             },
-            { threshold: 0.1 } // triggering when we see 10% of the element
+            { threshold: 0.1 }
         );
 
-        elements.forEach(el => observer.observe(el));
+        elements.forEach((element) => observer.observe(element));
 
         return () => {
-            elements.forEach(el => observer.unobserve(el));
+            observer.disconnect();
         };
-    }, [selector]);
+    }, [selector, refreshKey]);
 }
 
 export default useRevealOnScroll;

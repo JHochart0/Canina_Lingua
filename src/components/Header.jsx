@@ -20,7 +20,7 @@ function Header() {
             const currentScrollY = window.scrollY;
 
             // If scrolling down by more than 10px (small tolerance threshold)
-            if (currentScrollY > lastScrollY.current && currentScrollY > 200) {
+            if (currentScrollY > lastScrollY.current && currentScrollY > 500) {
                 setIsVisible(false); // Hide the header
             } else {
                 setIsVisible(true); // Show the header (scrolling up)

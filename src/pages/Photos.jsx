@@ -9,19 +9,17 @@ function Photos() {
     const [images, setImages] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    useRevealOnScroll(".fade-in-up, .fade-in-side-left, .fade-in-side-right");
+    useRevealOnScroll(".fade-in-up");
+    useRevealOnScroll(".zoom-animation", images);
 
-    // change the title of the page and fetch the google script used to get the images stocked in the google drive
     useEffect(() => {
         document.title = "Canina Lingua - Galerie photos";
 
-        // Google script calling the google drive API, change the link of each new deployment
         const url = `https://script.google.com/macros/s/AKfycbzBUcyxZY1naHAliQ0NwNreurJG8pds3TstxytTt9NGwWjZGKu5bv4k4G6Q7CBs3q3v/exec`;
 
         fetch(url)
             .then((res) => res.json())
             .then((data) => {
-
                 setImages(data);
                 setLoading(false);
             })
@@ -34,12 +32,42 @@ function Photos() {
     return (
         <div className="photos-container">
 
-            {/* Photos gallery part */}
-            <div className="photos-gallery-container">
+            {/* Grande Bannière Hero immersive */}
+            <div className="hero-banner fade-in-up">
+                <div className="hero-banner-overlay"></div>
+                
+                <div className="hero-banner-card">
+                    <div className="hero-paw-bg"></div>
+                    
+                    
+                    <h1 className="hero-banner-title">Galerie Photos</h1>
+                    
+                    <p className="hero-banner-subtitle">
+                        Découvrez en images le quotidien, les séances d'éducation et la complicité partagée avec nos compagnons à quatre pattes.
+                    </p>
+
+                    <div className="hero-banner-stats">
+                        <div className="stat-item">
+                            <span className="stat-value">{loading ? "..." : images.length}</span>
+                            <span className="stat-label">Photos immortalisées</span>
+                        </div>
+                        <div className="stat-divider"></div>
+                        <div className="stat-item">
+                            <span className="stat-value">100%</span>
+                            <span className="stat-label">Méthode Éthique</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Galerie de photos */}
+            <div className="photos-gallery-container fade-in-up">
                 {loading && <div className="photos-gallery-loader"></div>}
-                {!loading && images.length === 0 && <p className="photos-gallery-notFound">Aucune photo n'a été trouvée.</p>}
+                {!loading && images.length === 0 && (
+                    <p className="photos-gallery-notFound">Aucune photo n'a été trouvée.</p>
+                )}
                 {images.map((file) => (
-                    <PhotoItem key={file.id} file={file} />
+                    <PhotoItem key={file.id} file={file}/>
                 ))}
             </div>
 
