@@ -52,8 +52,8 @@ function Photos() {
                         </div>
                         <div className="photos-stat-divider"></div>
                         <div className="photos-stat-item">
-                            <span className="photos-stat-value">100%</span>
-                            <span className="photos-stat-label">Méthode Éthique</span>
+                            <span className="photos-stat-value">Environnements réels</span>
+                            <span className="photos-stat-label">À domicile & En balade</span>
                         </div>
                     </div>
                 </div>
