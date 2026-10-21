@@ -169,6 +169,7 @@
 
 .photos-hero-banner-stats {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 30px;
@@ -181,12 +182,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex: 1;
+    max-width: 300px;
 }
 
 .photos-stat-value {
     font-family: var(--font-main);
     color: var(--color-green);
     font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
 }
 
 .photos-stat-label {
@@ -195,12 +203,15 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     opacity: 0.8;
+    margin-top: 4px;
+    white-space: nowrap;
 }
 
 .photos-stat-divider {
     width: 1px;
-    height: 30px;
+    height: 35px;
     background-color: rgba(217, 135, 28, 0.3);
+    flex-shrink: 0;
 }
 
 /*********************************

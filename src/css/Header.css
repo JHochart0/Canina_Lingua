@@ -349,11 +349,6 @@
 ******** Responsive navbar *******
 *********************************/
 
-/*
- * Activate burger navigation on:
- * - screens up to 1024px wide;
- * - landscape screens up to 1500px wide.
- */
 @media (max-width: 1024px),
        (max-width: 1500px) and (orientation: landscape) {
 
