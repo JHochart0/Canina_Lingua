@@ -77,7 +77,6 @@
 
     background: rgba(24, 26, 27, 0.35);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
 
     border: 1px solid rgba(217, 135, 28, 0.35);
     border-radius: 20px;
@@ -521,7 +520,7 @@
 
 .contact-form-group textarea {
     resize: none;
-    min-height: 180px;
+    min-height: 260px;
     max-height: 300px;
     font-family: inherit;
 }
