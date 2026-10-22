@@ -22,7 +22,7 @@ function PhotoItem({ file }) {
             <div className="zoom-animation">
                 <img
                     src={file.webContentLink}
-                    alt={`NOM_STRUCTURE_${file.name}`}
+                    alt={`CaninaLingua_${file.name}`}
                     className="photos-gallery-image"
                     onError={(e) => {
                         e.target.src = file.webContentLink;
@@ -52,7 +52,7 @@ function PhotoItem({ file }) {
                     {isLoaded && (
                         <img
                             src={file.webContentLink}
-                            alt={`NOM_STRUCTURE_${file.name}`}
+                            alt={`CaninaLingua_${file.name}`}
                             className="lightbox-image"
                             onClick={(e) => e.stopPropagation()}
                             onError={(e) => {

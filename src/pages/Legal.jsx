@@ -22,7 +22,7 @@ function Legal() {
                     <p><strong>Nom commercial : </strong>Canina Lingua</p>
                     <p><strong>Forme Juridique : </strong>Entrepreneur individuel</p>
                     <p><strong>Forme d'exercice </strong>Libérale non règlementée, Commerciale, Artisanale</p>
-                    <p><strong>Représentant légal et Directeur de la publication : </strong>David LEVEL</p>
+                    <p><strong>Représentant légal et Directeur de la publication : </strong>LEVEL David, Philippe, Francis</p>
                     <p><strong>SIREN : </strong>888 209 483</p>
                     <p><strong>SIRET (siège) : </strong>888 209 483 00021</p>
                     <p><strong>Date d'immatriculation au RNE : </strong>20/08/2020</p>
@@ -64,13 +64,12 @@ function Legal() {
                         données vous concernant.
                     </p>
                     <p>
-                        Ces droits peuvent être exercés en vous adressant à : <strong>Jovany Hochart</strong>, Correspondant Informatique et libertés, WebUniv, 102 rue Neuve, 62100 Calais, France en précisant dans l’objet du courrier « Droit des personnes » et en joignant la copie de votre
-                        justificatif d’identité :
+                        Ces droits peuvent être exercés en vous adressant directement au responsable du traitement des données, <strong>David Level (Canina Lingua)</strong>, en précisant dans l'objet de votre demande « Droit des personnes (RGPD) » :
                     </p>
                     <ul>
-                        <li>soit directement sur le site, via la page de <NavLink to="/contact" content="Contact" id=""/></li>
-                        <li>soit par courriel : <strong>webuniv.pro@gmail.com</strong></li>
-                        <li>soit en écrivant à : <strong>WebUniv - Jovany Hochart, 102 rue Neuve, 62100 Calais, France</strong></li>
+                        <li>Soit directement sur le site, via notre page de <NavLink to="/contact" content="Contact" id=""/></li>
+                        <li>Soit par e-mail : <strong>david.level@caninalingua.fr</strong></li>
+                        <li>Soit par voie postale en écrivant à : <strong>Canina Lingua - David Level, 16 rue de l'Amiral Courbet, Appartement 5, 62480 Le Portel, France</strong></li>
                     </ul>
                 </div>   
             </div>

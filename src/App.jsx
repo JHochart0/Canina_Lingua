@@ -35,7 +35,7 @@ function App() {
                         <Route path="/contact" element={<Contact/>} />
                         <Route path="/galerie-photos" element={<Photos/>} />
                         <Route path="/mentions-legales" element={<Legal/>} />
-                        <Route path="/GTC" element={<GTC/>} />
+                        <Route path="/conditions-generales-de-ventes" element={<GTC/>} />
                         <Route path="*" element={<NotFound404/>} />
                     </Routes>
                 </div>

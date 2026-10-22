@@ -59,7 +59,7 @@ function Footer() {
 
             {/*legal part of the footer*/}
             <div className="footer-bottom">
-                <NavLink to="/gtc" content="Conditions générales de prestations de service" id="footer-gtcLink" />
+                <NavLink to="/conditions-generales-de-ventes" content="Conditions générales de ventes" id="footer-gtcLink" />
                 <p className="footer-copyright">© {new Date().getFullYear()} Tous droits réservés | Canina Lingua</p>
                 <NavLink to="/mentions-legales" content="Mentions légales et politique de confidentialité" id="footer-legalLink" />
             </div>

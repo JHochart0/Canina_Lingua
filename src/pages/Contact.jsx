@@ -13,7 +13,7 @@ import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 function Contact() {
     // Scroll reveal animation initialization
-    useRevealOnScroll(".fade-in-up, .fade-in-side-left, .fade-in-side-right, .zoom-animation");
+    useRevealOnScroll(".fade-in-up, .fade-in-side-left, .fade-in-side-right");
 
     // Set page title on component mount
     useEffect(() => {

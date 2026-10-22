@@ -1,14 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&display=swap');
+
+/* Global variables */
 :root {
     --color-green: #5b914e;
     --color-gold: #d9871c;
     --color-white: #d3cfc9;
     --color-dark-gray: #181a1b;
-    --font-main: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;;
+    --font-main: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
+    --dog-paw-svg: url("/img_Canina_Lingua/dog-paw.svg");
 }
 
-
-/*fade-in-up animation*/
+/***************************
+*********ANIMATIONS*********
+***************************/
 .fade-in-up {
     opacity: 0;
     transform: translateY(100px);
@@ -51,17 +55,171 @@
 
 /* Container global */
 .services-container {
-    overflow:hidden;
-    min-height: 150vh;
+    width: 100%;
+    font-family: var(--font-main);
     display: flex;
     flex-direction: column;
-    align-items: center;  
-    margin: 0 auto;
-    padding-bottom:100px;
-    line-height: 1.6;
-    color: var(--color-dark-gray);
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+}
+
+/*********************************
+********** HERO BANNER ***********
+*********************************/
+.services-hero-banner {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background: url('../assets/img/Canina_Lingua_dog_Background_services_banner.webp') no-repeat left 32%;
+    background-size: cover;
+
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.541);
+    border: 1px solid rgba(217, 135, 28, 0.25);
+}
+
+.services-hero-banner-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        rgba(153, 97, 24, 0.35) 0%,
+        rgba(24, 26, 27, 0.15) 50%,
+        rgba(153, 97, 24, 0.35) 100%
+    );
+
+    z-index: 1;
+}
+
+.services-hero-banner-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 35px 50px;
+    max-width: 800px;
+    width: 90%;
+    min-height: 300px;
+
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+
+    background: rgba(24, 26, 27, 0.35);
+    backdrop-filter: blur(6px);
+
+    border: 1px solid rgba(217, 135, 28, 0.35);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.services-hero-banner-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--color-gold);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), 0 0 20px rgba(217, 135, 28, 0.2);
+}
+
+.services-hero-paw-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    background: var(--color-green);
+    opacity: 0.35;
+    -webkit-mask-image: var(--dog-paw-svg);
+    mask-image: var(--dog-paw-svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.services-hero-banner-title {
     font-family: var(--font-main);
-    overflow-x: hidden;
+    color: var(--color-gold);
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0 0 10px 0;
+    -webkit-text-stroke: 1px var(--color-dark-gray);
+    text-shadow: 0 4px 12px rgba(217, 135, 28, 0.3);
+}
+
+.services-hero-banner-subtitle {
+    color: var(--color-white);
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin: 0 0 25px 0;
+    max-width: 650px;
+    opacity: 0.95;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Banner key statistics & badges layout */
+.services-hero-banner-stats {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(211, 207, 201, 0.15);
+    width: 100%;
+}
+
+.services-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex: 1;
+    max-width: 300px;
+}
+
+.services-stat-value {
+    font-family: var(--font-main);
+    color: var(--color-green);
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.services-stat-label {
+    color: var(--color-white);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    margin-top: 4px;
+    white-space: nowrap;
+}
+
+.services-stat-divider {
+    width: 1px;
+    height: 35px;
+    background-color: rgba(217, 135, 28, 0.4);
+    flex-shrink: 0;
 }
 
 
