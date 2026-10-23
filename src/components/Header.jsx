@@ -19,22 +19,23 @@ function Header() {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
 
-            // If scrolling down by more than 10px (small tolerance threshold)
-            if (currentScrollY > lastScrollY.current && currentScrollY > 500) {
-                setIsVisible(false); // Hide the header
+            if (isMenuOpen) {
+                setIsVisible(true);
+            } else if (
+                currentScrollY > lastScrollY.current &&
+                currentScrollY > 500
+            ) {
+                setIsVisible(false);
             } else {
-                setIsVisible(true); // Show the header (scrolling up)
+                setIsVisible(true);
             }
 
-            // Update the last scroll position
             lastScrollY.current = currentScrollY;
         };
 
         window.addEventListener('scroll', handleScroll, { passive: true });
 
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
+        return () => window.removeEventListener('scroll', handleScroll);
     }, [isMenuOpen]);
 
     // Effect to close the menu when clicking outside of it
