@@ -407,7 +407,6 @@
     color: rgba(211, 207, 201, 0.7);
     text-decoration: none;
     position: relative;
-    padding-bottom: 4px;
     transition: color 0.3s ease;
     display: inline-block;
 }
