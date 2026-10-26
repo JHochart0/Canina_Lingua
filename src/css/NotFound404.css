@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&display=swap');
+
 :root {
     --color-green: #5b914e;
     --color-gold: #d9871c;
     --color-white: #d3cfc9;
     --color-dark-gray: #181a1b;
-    --font-main: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;;
+    --font-main: "Libre Franklin", "Helvetica Neue", helvetica, arial, sans-serif;
 }
 
 /*********************************
-*********notfound container ******
+********* NOTFOUND CONTAINER *****
 *********************************/
 .notfound-container {
     color: var(--color-dark-gray);
@@ -19,18 +20,84 @@
     position: relative;
     overflow: hidden;
     text-align: center;
-    min-height:70vh;
+    min-height: 90vh;
+    padding: 30px 20px;
+    box-sizing: border-box;
 }
 
 /*********************************
-*********notfound text ***********
+********* NOTFOUND CONTENT *******
 *********************************/
 .notfound-content {
     position: relative;
-    z-index: 3;
-    max-width: 520px;
+    z-index: 1;
+    width: 100%;
+    max-width: 800px;
+    padding: 80px 45px;
+    box-sizing: border-box;
     pointer-events: auto;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: linear-gradient(
+        145deg,
+        rgba(53, 53, 52, 0.98),
+        rgba(24, 26, 27, 0.99)
+    );
+
+    border: 1px solid rgba(217, 135, 28, 0.65);
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.45),
+        inset 0 0 20px rgba(217, 135, 28, 0.20);
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
+
+/* Decorative green paw print */
+
+.notfound-content::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 75%;
+    height: 75%;
+    transform: translate(-50%, -50%);
+
+    background: var(--color-green);
+    opacity: 0.22;
+
+    -webkit-mask-image: var(--dog-paw-svg);
+    mask-image: var(--dog-paw-svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    filter: drop-shadow(0 0 14px rgba(91, 145, 78, 0.25));
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Keep content above the decorative paw */
+
+.notfound-content > * {
+    position: relative;
+    z-index: 1;
+}
+
+/*********************************
+********* NOTFOUND TEXT **********
+*********************************/
 
 .notfound-code {
     font-size: 8.5rem;
@@ -41,24 +108,29 @@
     letter-spacing: -2px;
     filter: drop-shadow(0 4px 6px #d9871c8a);
     -webkit-text-stroke: 1px var(--color-dark-gray);
-    
 }
 
 .notfound-title {
     font-size: 1.6rem;
     color: var(--color-green);
-    margin: 20px 0 15px 0;
+    margin: 20px 0 15px;
     text-transform: uppercase;
     letter-spacing: 2px;
+    line-height: 1.4;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
 .notfound-text {
     font-size: 1.1rem;
-    color: var(--color-dark-gray);
+    color: var(--color-white);
     line-height: 1.6;
-    margin-bottom: 35px;
-    font-weight:bold;
+    margin: 0 0 35px;
+    font-weight: 700;
 }
+
+/*********************************
+********* NOTFOUND BUTTON ********
+*********************************/
 
 .notfound-btn {
     display: inline-block;
@@ -68,105 +140,155 @@
     padding: 14px 32px;
     font-weight: 600;
     font-size: 0.95rem;
-    border: 1px solid rgba(217, 135, 28, 0.2);
+    border: 1px solid rgba(217, 135, 28, 0.45);
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(24, 26, 27, 0.2); 
-    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+    transition:
+        color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+
     cursor: pointer;
 }
 
 .notfound-btn:hover {
     color: var(--color-gold);
     border-color: var(--color-green);
-    box-shadow: 0 0 15px rgba(91, 145, 78, 0.5), 0 6px 16px rgba(0, 0, 0, 0.3);
+
+    box-shadow:
+        0 0 15px rgba(91, 145, 78, 0.4),
+        0 6px 16px rgba(0, 0, 0, 0.35);
+
     transform: translateY(-2px);
 }
-
 
 /*********************************
 ********* RESPONSIVE *************
 *********************************/
-
 /* Tablets */
-@media (max-width: 1024px) {
 
+@media (max-width: 1024px) {
+    .notfound-content {
+        max-width: 550px;
+        padding: 45px 35px;
+    }
+
+    .notfound-code {
+        font-size: 7rem;
+    }
+
+    .notfound-title {
+        font-size: 1.4rem;
+    }
 }
 
 /* Mobiles */
+
 @media (max-width: 599px) {
     .notfound-container {
-        padding: 10px;
+        padding: 20px 12px;
     }
 
     .notfound-content {
-        max-width: 190px;
-    }
-    .notfound-code { 
-        font-size: 3.2rem; 
-    }
-    .notfound-title { 
-        font-size: 0.85rem; 
-        margin: 8px 0 4px 0; 
-    }
-    .notfound-text { 
-        font-size: 0.72rem; 
-        line-height: 1.3; 
-        margin-bottom: 12px; 
-    }
-    .notfound-btn { 
-        padding: 8px 18px; 
-        font-size: 0.75rem; 
-        border-radius: 6px; 
+        max-width: 420px;
+        padding: 30px 20px;
+        border-radius: 16px;
     }
 
+    .notfound-content::before {
+        width: 80%;
+        height: 80%;
+    }
+
+    .notfound-code {
+        font-size: 3.8rem;
+    }
+
+    .notfound-title {
+        font-size: 0.95rem;
+        margin: 12px 0 8px;
+        letter-spacing: 1px;
+    }
+
+    .notfound-text {
+        font-size: 0.82rem;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+
+    .notfound-btn {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+        border-radius: 6px;
+    }
 }
 
 /* Tablets Landscape */
+
 @media (max-width: 1500px) and (orientation: landscape) {
     .notfound-container {
         min-height: 100vh;
     }
 
-    .notfound-code { 
-        font-size: 5.4rem; 
+    .notfound-content {
+        max-width: 550px;
+        padding: 35px 30px;
     }
-    .notfound-title { 
-        font-size: 1.2rem; 
-        margin: 10px 0; 
+
+    .notfound-code {
+        font-size: 5.4rem;
     }
-    .notfound-text { 
-        font-size: 1rem; 
-        margin-bottom: 20px; 
+
+    .notfound-title {
+        font-size: 1.2rem;
+        margin: 10px 0;
+    }
+
+    .notfound-text {
+        font-size: 1rem;
+        margin-bottom: 20px;
     }
 }
 
-/* Mobiles Landscape  */
+/* Mobiles Landscape */
+
 @media (max-width: 899px) and (orientation: landscape) {
     .notfound-container {
         padding: 20px 10px;
-        min-height: 100vh; 
+        min-height: 100vh;
     }
 
     .notfound-content {
-        max-width: 220px;
+        max-width: 450px;
+        padding: 25px 25px;
+    }
+
+    .notfound-content::before {
+        width: 65%;
+        height: 65%;
     }
 
     .notfound-code {
         font-size: 4.2rem;
     }
+
     .notfound-title {
         font-size: 1.05rem;
-        margin: 10px 0 6px 0;
+        margin: 10px 0 6px;
     }
+
     .notfound-text {
         font-size: 0.82rem;
         line-height: 1.4;
         margin-bottom: 14px;
     }
+
     .notfound-btn {
         padding: 10px 22px;
         font-size: 0.82rem;
         border-radius: 8px;
     }
-
 }
