@@ -1,3 +1,3 @@
 ## Canina Lingua
 
-This project is the official website for the Canina Lingua company.
+This project is temporary deposit for Canina Lingua. Check (this one)[https://github.com/CaninaLingua/Canina-Lingua] for the updated version instead.
