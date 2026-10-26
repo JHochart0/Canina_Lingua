@@ -10,8 +10,10 @@ import baladePlageImage from "../assets/img/img_prestations/Canina_Lingua_presta
 
 function Services() {
     useRevealOnScroll(
-        ".fade-in-up, .fade-in-side-left, .fade-in-side-right, .zoom-animation"
+        ".fade-in-up, .fade-in-side-left, .fade-in-side-right", servicesGroups
     );
+
+
 
     useEffect(() => {
         document.title = "Canina Lingua - Mes prestations & Tarifs";

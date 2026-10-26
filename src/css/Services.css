@@ -48,22 +48,6 @@
     transform: translate(0, 0);
 }
 
-.zoom-animation {
-    opacity: 0;
-    transform: scale(0.9);
-    filter: blur(4px);
-    transition:
-        opacity 1.2s ease-out,
-        transform 1.2s ease-out,
-        filter 1.2s ease-out;
-}
-
-.zoom-animation.visible {
-    opacity: 1;
-    transform: scale(1);
-    filter: blur(0);
-}
-
 /********************************
 ******** CONTAINER ***************
 ********************************/
@@ -77,7 +61,7 @@
     margin: 0 auto;
     padding-bottom: 50px;
     overflow: hidden;
-    background-color: #fff;
+    
     color: var(--color-white);
     font-family: var(--font-main);
     box-sizing: border-box;
@@ -329,7 +313,6 @@
 .services-intro-text {
     max-width: 850px;
     margin: 0 auto;
-    color: rgba(211, 207, 201, 0.92);
     font-size: 1.05rem;
     line-height: 1.9;
 }
@@ -370,7 +353,6 @@
 
 .services-philosophy-content p {
     margin: 0;
-    color: rgba(211, 207, 201, 0.9);
     font-size: 0.98rem;
     line-height: 1.8;
 }
@@ -411,7 +393,6 @@
 
 .services-group-heading > p {
     margin: 0;
-    color: rgba(211, 207, 201, 0.86);
     font-size: 1rem;
     line-height: 1.8;
 }
@@ -439,6 +420,15 @@
 /********************************
 ******** SERVICE CARDS ***********
 ********************************/
+.service-card-reveal {
+    display: flex;
+    min-width: 0;
+}
+
+.service-card-reveal .service-card {
+    flex: 1;
+    min-width: 0;
+}
 
 .service-card {
     position: relative;
@@ -458,16 +448,19 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 
     transition:
-        transform 0.3s ease,
+        translate 0.3s ease,
         border-color 0.3s ease,
         box-shadow 0.3s ease;
+    
 }
 
+
 .service-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(217, 135, 28, 0.8);
+    translate: 0 -5px;
+    border-color: var(--color-gold);
     box-shadow: 0 16px 35px rgba(0, 0, 0, 0.4);
 }
+
 
 .service-card-image {
     position: relative;
@@ -482,13 +475,9 @@
     border-bottom: 1px solid rgba(217, 135, 28, 0.25);
 }
 
-
-
-
 .service-card-image--photo {
     padding: 0;
 }
-
 
 .service-card-photo {
     position: absolute;
@@ -498,31 +487,6 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-}
-
-.service-image-label,
-.service-image-hint {
-    position: relative;
-    z-index: 1;
-}
-
-.service-image-label {
-    padding: 8px 14px;
-    color: var(--color-gold);
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    border: 1px solid rgba(217, 135, 28, 0.4);
-    border-radius: 30px;
-    background: rgba(24, 26, 27, 0.65);
-}
-
-.service-image-hint {
-    max-width: 280px;
-    color: rgba(211, 207, 201, 0.8);
-    font-size: 0.85rem;
-    line-height: 1.5;
 }
 
 .service-card-content {
@@ -569,9 +533,10 @@
 
 .service-duration {
     color: rgba(211, 207, 201, 0.85);
-    font-size: 0.84rem;
+    font-size: 1rem;
     font-weight: 600;
     line-height: 1.5;
+    margin-left: 10px;
 }
 
 .service-price {
@@ -581,11 +546,11 @@
     font-weight: 800;
     line-height: 1.2;
     white-space: nowrap;
+    margin-right:10px;
 }
 
 .service-card-description {
     margin: 0 0 18px;
-    color: rgba(211, 207, 201, 0.9);
     font-size: 0.92rem;
     line-height: 1.8;
 }
@@ -602,7 +567,6 @@
 .service-card-details li {
     position: relative;
     padding-left: 23px;
-    color: rgba(211, 207, 201, 0.86);
     font-size: 0.87rem;
     line-height: 1.7;
 }
@@ -610,13 +574,13 @@
 .service-card-details li::before {
     content: "";
     position: absolute;
-    top: 0.62em;
+    top: calc((1.7em - 9px) / 2);
     left: 2px;
     width: 9px;
     height: 9px;
     background: var(--color-green);
     border-radius: 50%;
-    box-shadow: 0 0 0 3px rgba(91, 145, 78, 0.12);
+    box-shadow: 0 0 0 5px rgba(91, 145, 78, 0.12);
 }
 
 /********************************
@@ -659,7 +623,8 @@
 .service-card [id^="service-contact-"]:hover,
 #services-area-contact:hover,
 #services-main-contact:hover {
-    box-shadow: 0 0 15px rgba(91, 145, 78, 0.5), 0 6px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 15px rgba(91, 145, 78, 0.5),
+                0 6px 16px rgba(0, 0, 0, 0.3);
     transform: translateY(-2px);
     background: #d9871c18;
     color: var(--color-gold);
@@ -694,16 +659,7 @@
     min-width: 0;
     min-height: 380px;
     overflow: hidden;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(91, 145, 78, 0.18),
-            rgba(217, 135, 28, 0.12)
-        ),
-        #242727;
-
-    border: 1px solid rgba(217, 135, 28, 0.3);
+    border: 1.5px solid rgb(217, 135, 28);
     border-radius: 18px;
 }
 
@@ -727,7 +683,6 @@
 
 .services-area-description,
 .services-area-note {
-    color: rgba(211, 207, 201, 0.9);
     font-size: 0.97rem;
     line-height: 1.85;
 }
@@ -765,7 +720,7 @@
 
 .services-area-distance p {
     margin: 0;
-    color: rgba(211, 207, 201, 0.78);
+    color: var(--color-gold);
     font-size: 0.85rem;
     line-height: 1.5;
 }
@@ -827,7 +782,6 @@
 .services-contact-cta > p {
     max-width: 750px;
     margin: 0 auto 28px;
-    color: rgba(211, 207, 201, 0.9);
     font-size: 1rem;
     line-height: 1.85;
 }
